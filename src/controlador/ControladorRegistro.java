@@ -5,7 +5,7 @@
  */
 package controlador;
 
-import General.DatosUsuarios;
+import Sistema.Sistema_DatosUsuarios;
 import javax.swing.JOptionPane;
 import modelo.usuario.FactoryCliente;
 import vista.vistaLogin;
@@ -19,7 +19,7 @@ public class ControladorRegistro {
 
     private vistaRegistro vista;
 
-    public ControladorRegistro(vistaRegistro vista, DatosUsuarios sistemaUsuario) {
+    public ControladorRegistro(vistaRegistro vista, Sistema_DatosUsuarios sistemaUsuario) {
         this.vista = vista;
         this.vista.btnRegistrar.addActionListener(e -> {
             String nombre = vista.txtNombre.getText();
@@ -48,7 +48,7 @@ public class ControladorRegistro {
             JOptionPane.showMessageDialog(vista, "Cuenta creada correctamente");
             vista.dispose();
             vistaLogin abrir = new vistaLogin();
-            DatosUsuarios s = new DatosUsuarios();
+            Sistema_DatosUsuarios s = new Sistema_DatosUsuarios();
             ControladorLogin cabrir = new ControladorLogin(abrir, s);
             cabrir.iniciar();
 
@@ -57,7 +57,7 @@ public class ControladorRegistro {
         this.vista.btnVolver.addActionListener(e -> {
             vista.dispose();
             vistaLogin abrir = new vistaLogin();
-            DatosUsuarios s = new DatosUsuarios();
+            Sistema_DatosUsuarios s = new Sistema_DatosUsuarios();
             ControladorLogin cAbrir = new ControladorLogin(abrir, s);
             cAbrir.iniciar();
         });

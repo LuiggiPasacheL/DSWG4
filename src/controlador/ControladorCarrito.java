@@ -1,6 +1,6 @@
 package controlador;
 
-import General.DatosProductos;
+import Sistema.Sistema_DatosProductos;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.text.DecimalFormat;
@@ -186,7 +186,7 @@ public class ControladorCarrito {
     private void volver() {
         vista.dispose();
         vistaProductos vista1 = new vistaProductos();
-        DatosProductos s = new DatosProductos();
+        Sistema_DatosProductos s = new Sistema_DatosProductos();
         ControladorProductos ci = new ControladorProductos(vista1, s);
         ci.iniciar();
     }

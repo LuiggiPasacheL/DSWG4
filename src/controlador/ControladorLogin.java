@@ -5,8 +5,8 @@
  */
 package controlador;
 
-import General.DatosProductos;
-import General.DatosUsuarios;
+import Sistema.Sistema_DatosProductos;
+import Sistema.Sistema_DatosUsuarios;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -23,9 +23,9 @@ import vista.vistaTipoUsuario;
 public class ControladorLogin {
 
     private vistaLogin vista;
-    private DatosUsuarios sistemaUsuario;
+    private Sistema_DatosUsuarios sistemaUsuario;
 
-    public ControladorLogin(vistaLogin vista, DatosUsuarios sistemaUsuario) {
+    public ControladorLogin(vistaLogin vista, Sistema_DatosUsuarios sistemaUsuario) {
         this.vista = vista;
         this.sistemaUsuario = sistemaUsuario;
         this.vista.btnIngresar.addActionListener(e -> {
@@ -35,13 +35,13 @@ public class ControladorLogin {
             if ("".equals(usuario) || "".equals(contraseña)) {
                 JOptionPane.showMessageDialog(vista, "Campo(s) vacio(s), ingrese sus credenciales nuevamente");
             } else {
-                DatosUsuarios.conectado = sistemaUsuario.verificarSesion(vista.txtUsuario.getText(), vista.txtContraseña.getText());
-                if (DatosUsuarios.conectado != null) {
+                Sistema_DatosUsuarios.conectado = sistemaUsuario.verificarSesion(vista.txtUsuario.getText(), vista.txtContraseña.getText());
+                if (Sistema_DatosUsuarios.conectado != null) {
                     Cliente cliente = (Cliente) sistemaUsuario.datosUsuario(usuario);
                     System.out.println("Correcto, Bienvenido " + cliente.getNombre());
                     vista.dispose();
                     vistaProductos vista1 = new vistaProductos();
-                    DatosProductos s = new DatosProductos();
+                    Sistema_DatosProductos s = new Sistema_DatosProductos();
                     ControladorProductos ci = new ControladorProductos(vista1, s);
                     ci.iniciar();
 
@@ -57,7 +57,7 @@ public class ControladorLogin {
             public void actionPerformed(ActionEvent e) {
                 vista.dispose();
                 vistaRegistro registrar = new vistaRegistro();
-                DatosUsuarios s = new DatosUsuarios();
+                Sistema_DatosUsuarios s = new Sistema_DatosUsuarios();
                 ControladorRegistro cr = new ControladorRegistro(registrar, s);
                 cr.iniciar();
             }

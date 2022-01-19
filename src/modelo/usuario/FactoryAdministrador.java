@@ -5,7 +5,7 @@
  */
 package modelo.usuario;
 
-import General.DatosUsuarios;
+import Sistema.Sistema_DatosUsuarios;
 
 /**
  *
@@ -24,7 +24,7 @@ public class FactoryAdministrador implements IFactoryUsuario{
 
         IUsuario admin = new Administrador(usuario, contraseña);
 
-        DatosUsuarios.admins.add(admin);
+        Sistema_DatosUsuarios.admins.add(admin);
         
         return admin;
     }

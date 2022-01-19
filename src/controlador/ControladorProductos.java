@@ -5,8 +5,8 @@
  */
 package controlador;
 
-import General.DatosProductos;
-import General.DatosUsuarios;
+import Sistema.Sistema_DatosProductos;
+import Sistema.Sistema_DatosUsuarios;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
@@ -23,11 +23,11 @@ import vista.vistaProductos;
 public class ControladorProductos {
 
     private vistaProductos vista;
-    private DatosProductos sistemaProducto;
+    private Sistema_DatosProductos sistemaProducto;
     private CarritoCompra carrito;
     int[] indicesProductosSeleccionados;
 
-    public ControladorProductos(vistaProductos vista, DatosProductos sistemaProducto) {
+    public ControladorProductos(vistaProductos vista, Sistema_DatosProductos sistemaProducto) {
         this.vista = vista;
         this.sistemaProducto = sistemaProducto;
         carrito = new CarritoCompra();
@@ -102,10 +102,10 @@ public class ControladorProductos {
         });
 
         this.vista.btnVolver.addActionListener(e -> {
-            DatosUsuarios.conectado.cerrarSesion();
+            Sistema_DatosUsuarios.conectado.cerrarSesion();
             vista.dispose();
             vistaLogin abrir = new vistaLogin();
-            DatosUsuarios sistemaUsuario = new DatosUsuarios();
+            Sistema_DatosUsuarios sistemaUsuario = new Sistema_DatosUsuarios();
             ControladorLogin cabrir = new ControladorLogin(abrir, sistemaUsuario);
             cabrir.iniciar();
         });

@@ -1,6 +1,6 @@
 package controlador;
 
-import General.DatosProductos;
+import Sistema.Sistema_DatosProductos;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 import modelo.producto.IProducto;
@@ -88,7 +88,7 @@ public class ControladorVenta {
     private void volver(){
         vista.dispose();
         vistaProductos vista1 = new vistaProductos();
-        DatosProductos s = new DatosProductos();
+        Sistema_DatosProductos s = new Sistema_DatosProductos();
         ControladorProductos ci = new ControladorProductos(vista1, s);
         ci.iniciar();
     }

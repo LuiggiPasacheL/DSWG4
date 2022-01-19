@@ -1,10 +1,10 @@
-package General;
+package Sistema;
 
 import javax.swing.*;
 import java.util.ArrayList;
 import modelo.producto.IProducto;
 
-public class DatosProductos {
+public class Sistema_DatosProductos {
 
     //METODOS PRODUCTO
     public static ArrayList<IProducto> products = new ArrayList();

@@ -5,8 +5,8 @@
  */
 package controlador;
 
-import General.DatosProductos;
-import General.DatosUsuarios;
+import Sistema.Sistema_DatosProductos;
+import Sistema.Sistema_DatosUsuarios;
 import javax.swing.JOptionPane;
 
 import vista.vistaInventario;
@@ -20,7 +20,7 @@ public class ControladorLoginAdmin {
 
     private vistaLoginAdmin vista;
 
-    public ControladorLoginAdmin(vistaLoginAdmin vista, DatosUsuarios datosUsuarios) {
+    public ControladorLoginAdmin(vistaLoginAdmin vista, Sistema_DatosUsuarios datosUsuarios) {
         this.vista = vista;
         this.vista.txtUsuario.requestFocus();
 
@@ -39,8 +39,8 @@ public class ControladorLoginAdmin {
                 return;
             }
 
-            DatosUsuarios.conectado = datosUsuarios.verificarSesionAdmin(usuario, contraseña);
-            if(DatosUsuarios.conectado == null){
+            Sistema_DatosUsuarios.conectado = datosUsuarios.verificarSesionAdmin(usuario, contraseña);
+            if(Sistema_DatosUsuarios.conectado == null){
                 JOptionPane.showMessageDialog(vista, "Campo(s) incorrecto(s), ingrese sus credenciales nuevamente");
                 return;
             }
@@ -49,7 +49,7 @@ public class ControladorLoginAdmin {
 
             vista.dispose();
             vistaInventario vista1 = new vistaInventario();
-            DatosProductos datosProductos = new DatosProductos();
+            Sistema_DatosProductos datosProductos = new Sistema_DatosProductos();
             ControladorInventario ci = new ControladorInventario(vista1, datosProductos);
             ci.iniciar();
 

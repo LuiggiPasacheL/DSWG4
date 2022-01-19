@@ -5,6 +5,7 @@
  */
 package General;
 
+import Sistema.Sistema_DatosUsuarios;
 import modelo.usuario.Administrador;
 import modelo.usuario.Cliente;
 import modelo.usuario.FactoryAdministrador;
@@ -24,7 +25,7 @@ import static org.junit.Assert.*;
  */
 public class DatosUsuariosTest {
     
-    DatosUsuarios datosUsuarios;
+    Sistema_DatosUsuarios datosUsuarios;
     Administrador a1;
     Cliente u1;
     
@@ -41,7 +42,7 @@ public class DatosUsuariosTest {
     
     @Before
     public void setUp() {
-        datosUsuarios = new DatosUsuarios();
+        datosUsuarios = new Sistema_DatosUsuarios();
         a1 = (Administrador) datosUsuarios.registrarUsuario(new FactoryAdministrador(),"testa1", "123testa");
         u1 = (Cliente) datosUsuarios.registrarUsuario(new FactoryCliente(),"testu1", "123testu",
                 "testu1", "123testu", "testd", "123456", "test@test.com");
@@ -174,7 +175,7 @@ public class DatosUsuariosTest {
     @Test
     public void testEliminarDatos() {
         System.out.println("eliminarDatos");
-        DatosUsuarios instance = datosUsuarios;
+        Sistema_DatosUsuarios instance = datosUsuarios;
         instance.eliminarDatos();
         int expResult = 0;
         int result = instance.tamañoUsuario() + instance.tamañoAdmin();

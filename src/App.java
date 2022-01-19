@@ -1,5 +1,5 @@
 
-import General.DatosProductos;
+import Sistema.Sistema_DatosProductos;
 import controlador.ControladorTipoUsuario;
 import modelo.producto.Producto;
 import modelo.usuario.FactoryAdministrador;
@@ -50,11 +50,11 @@ public class App {
         Producto p3 = new Producto("Sacagrasa", (float) 3.0, 12, "Articulos de limpieza");
         Producto p4 = new Producto("Deshumecedor", (float) 6.0, 12, "Articulos de limpieza");
         Producto p5 = new Producto("Ambientador", (float) 5.0, 12, "Articulos de limpieza");
-        DatosProductos.products.add(p1);
-        DatosProductos.products.add(p2);
-        DatosProductos.products.add(p3);
-        DatosProductos.products.add(p4);
-        DatosProductos.products.add(p5);
+        Sistema_DatosProductos.products.add(p1);
+        Sistema_DatosProductos.products.add(p2);
+        Sistema_DatosProductos.products.add(p3);
+        Sistema_DatosProductos.products.add(p4);
+        Sistema_DatosProductos.products.add(p5);
         
         //Iniciar sistema
         vistaTipoUsuario abrir = new vistaTipoUsuario();

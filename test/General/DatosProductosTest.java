@@ -5,6 +5,7 @@
  */
 package General;
 
+import Sistema.Sistema_DatosProductos;
 import modelo.producto.Producto;
 import modelo.producto.IProducto;
 import org.junit.After;
@@ -20,7 +21,7 @@ import static org.junit.Assert.*;
  */
 public class DatosProductosTest {
     
-    DatosProductos datosProductos;
+    Sistema_DatosProductos datosProductos;
     IProducto producto;
     
     public DatosProductosTest() {
@@ -36,7 +37,7 @@ public class DatosProductosTest {
     
     @Before
     public void setUp() {
-        datosProductos = new DatosProductos();
+        datosProductos = new Sistema_DatosProductos();
         producto = new Producto("prodTest", 1, 1, "prueba");
         datosProductos.actualizarProducto(producto);
     }
@@ -151,7 +152,7 @@ public class DatosProductosTest {
     public void testEditarProducto() {
         System.out.println("editarProducto");
         Producto prod = new Producto("Coca cola", (float) 2.5, 12, "Gaseosa");
-        DatosProductos instance = datosProductos;
+        Sistema_DatosProductos instance = datosProductos;
         instance.editarProducto(prod);
     }
     

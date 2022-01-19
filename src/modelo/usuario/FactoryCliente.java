@@ -5,7 +5,7 @@
  */
 package modelo.usuario;
 
-import General.DatosUsuarios;
+import Sistema.Sistema_DatosUsuarios;
 
 /**
  *
@@ -29,7 +29,7 @@ public class FactoryCliente implements IFactoryUsuario{
 
         IUsuario cliente = new Cliente(nombre, apellido, usuario, contraseña, direccion, telefono, correo);
 
-        DatosUsuarios.users.add(cliente);
+        Sistema_DatosUsuarios.users.add(cliente);
 
         return cliente;
 

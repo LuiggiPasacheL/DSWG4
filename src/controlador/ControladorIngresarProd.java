@@ -5,7 +5,7 @@
  */
 package controlador;
 
-import General.DatosProductos;
+import Sistema.Sistema_DatosProductos;
 import javax.swing.JOptionPane;
 import modelo.producto.Producto;
 import vista.vistaIngresarProd;
@@ -18,9 +18,9 @@ import vista.vistaInventario;
 public class ControladorIngresarProd{
 
     private vistaIngresarProd vista;
-    private DatosProductos datosProductos;
+    private Sistema_DatosProductos datosProductos;
 
-    public ControladorIngresarProd(vistaIngresarProd vista, DatosProductos datosProductos) {
+    public ControladorIngresarProd(vistaIngresarProd vista, Sistema_DatosProductos datosProductos) {
         this.vista = vista;
         this.datosProductos = datosProductos;
 

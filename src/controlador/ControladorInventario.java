@@ -5,8 +5,8 @@
  */
 package controlador;
 
-import General.DatosProductos;
-import General.DatosUsuarios;
+import Sistema.Sistema_DatosProductos;
+import Sistema.Sistema_DatosUsuarios;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -24,9 +24,9 @@ import vista.vistaLoginAdmin;
 public class ControladorInventario {
 
     private vistaInventario vista;
-    DatosProductos sistemaProducto;
+    Sistema_DatosProductos sistemaProducto;
 
-    public ControladorInventario(vistaInventario vista, DatosProductos sistemaProducto) {
+    public ControladorInventario(vistaInventario vista, Sistema_DatosProductos sistemaProducto) {
         this.vista = vista;
         this.sistemaProducto = sistemaProducto;
 
@@ -73,10 +73,10 @@ public class ControladorInventario {
         });
 
         this.vista.btnVolver.addActionListener(e -> {
-            DatosUsuarios.conectado.cerrarSesion();
+            Sistema_DatosUsuarios.conectado.cerrarSesion();
             vista.dispose();
             vistaLoginAdmin abrir = new vistaLoginAdmin();
-            DatosUsuarios sistemaUsuario = new DatosUsuarios();
+            Sistema_DatosUsuarios sistemaUsuario = new Sistema_DatosUsuarios();
             ControladorLoginAdmin cabrir = new ControladorLoginAdmin(abrir, sistemaUsuario);
             cabrir.iniciar();
         });

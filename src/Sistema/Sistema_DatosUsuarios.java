@@ -1,4 +1,4 @@
-package General;
+package Sistema;
 
 import modelo.producto.IProducto;
 import modelo.usuario.Cliente;
@@ -7,7 +7,7 @@ import modelo.usuario.IUsuario;
 
 import java.util.ArrayList;
 
-public class DatosUsuarios {
+public class Sistema_DatosUsuarios {
     //METODOS USUARIO
     public static IUsuario conectado;
     public static IProducto productoSeleccionado;

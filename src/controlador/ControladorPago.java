@@ -5,8 +5,8 @@
  */
 package controlador;
 
-import General.DatosProductos;
-import General.DatosUsuarios;   
+import Sistema.Sistema_DatosProductos;
+import Sistema.Sistema_DatosUsuarios;   
 import javax.swing.JOptionPane;
 import modelo.compras.CarritoCompra;
 import modelo.compras.Pago;
@@ -44,7 +44,7 @@ public class ControladorPago {
                 return;
             }
             
-            conectado = (Cliente) DatosUsuarios.conectado;
+            conectado = (Cliente) Sistema_DatosUsuarios.conectado;
             conectado.setPago(numTarjeta, clave, direccion);
 
             for(int i = 0; i < carrito.cantidadDeProductos(); i++){
@@ -77,7 +77,7 @@ public class ControladorPago {
     private void volverAProductos(){
         vista.dispose();
         vistaProductos vSiguiente = new vistaProductos();
-        DatosProductos dProductos = new DatosProductos();
+        Sistema_DatosProductos dProductos = new Sistema_DatosProductos();
         ControladorProductos cSiguiente = new ControladorProductos(vSiguiente, dProductos);
         cSiguiente.iniciar();
     }
